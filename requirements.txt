@@ -1,0 +1,7 @@
+matplotlib
+streamlit
+pandas
+pydeck
+seaborn
+PIL
+math
