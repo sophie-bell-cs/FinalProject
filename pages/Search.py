@@ -5,7 +5,7 @@ import pydeck as pdk
 
 
 #read files, convert to format that is easily accesible with no errors, via pandas, cleaning, and creating lists
-airbnb_df = pd.read_csv("/external/listings.csv",
+airbnb_df = pd.read_csv("external/listings.csv",
                         index_col='name')
 airbnb_df = airbnb_df[airbnb_df['availability_365'] != None]
 neighborhood_df = pd.read_csv('external/neighbourhoods.csv')
