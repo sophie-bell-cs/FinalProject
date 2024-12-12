@@ -24,13 +24,13 @@ def findDistance(airbnbLong, airbnbLat, transitLong, transitLat):
     return EARTH_RADIUS*c
 
 #reads files, converts to format that is easily accesible with no errors, via pandas, cleaning, indexing, and creating lists
-airbnb_df = pd.read_csv('/Users/sophiebell/PycharmProjects/pythonProject/FinalProject/external/listings.csv', index_col = 'name')
+airbnb_df = pd.read_csv('/external/listings.csv', index_col = 'name')
 airbnb_df = airbnb_df[airbnb_df['availability_365'] != None]
-neighborhood_df = pd.read_csv('/Users/sophiebell/PycharmProjects/pythonProject/FinalProject/external/neighbourhoods.csv')
+neighborhood_df = pd.read_csv('/external/neighbourhoods.csv')
 neighborhood_list = neighborhood_df['neighbourhood']
-busStops_df = pd.read_csv('FinalProject/external/PATI_Bus_Stops.csv', index_col ='Stop_Name')
+busStops_df = pd.read_csv('/external/PATI_Bus_Stops.csv', index_col ='Stop_Name')
 #reads file containing chosen AirBNB ID, stores as an integer
-placeID = open('/Users/sophiebell/PycharmProjects/pythonProject/FinalProject/external/chosenAirBNB.txt', 'r')
+placeID = open('/external/chosenAirBNB.txt', 'r')
 placeID = placeID.readline().strip()
 placeID = int(placeID)
 

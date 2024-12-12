@@ -5,10 +5,10 @@ import pydeck as pdk
 
 
 #read files, convert to format that is easily accesible with no errors, via pandas, cleaning, and creating lists
-airbnb_df = pd.read_csv("/Users/sophiebell/PycharmProjects/pythonProject/FinalProject/external/listings.csv",
+airbnb_df = pd.read_csv("/external/listings.csv",
                         index_col='name')
 airbnb_df = airbnb_df[airbnb_df['availability_365'] != None]
-neighborhood_df = pd.read_csv('/Users/sophiebell/PycharmProjects/pythonProject/FinalProject/external/neighbourhoods.csv')
+neighborhood_df = pd.read_csv('/external/neighbourhoods.csv')
 neighborhood_series = neighborhood_df['neighbourhood']
 neighborhood_list = [neighborhood_df.iloc[i, 1] for i in range(len(neighborhood_df))] #[PY4] A list comprehension
 neighborhood_list.insert(0, 'Show All') #add the option to view AirBNBs in all neighborhoods
@@ -75,7 +75,7 @@ selected = airbnbFilterC[airbnbFilterC['Select'] == True]
 
 #checks only one AirBNB is selected, then writes the unique ID of the airBNB into a text file to use on a different page
 if len(selected) == 1:
-    choice = open('/Users/sophiebell/PycharmProjects/pythonProject/FinalProject/external/chosenAirBNB.txt', 'w')
+    choice = open('/external/chosenAirBNB.txt', 'w')
     selectedID = selected.iloc[0]['id']
     selectedName = selected.index[0]
     choice.write(f"{selectedID}")
